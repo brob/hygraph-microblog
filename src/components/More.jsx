@@ -50,20 +50,14 @@ const More = ({currentCursor, size=1}) => {
         )});
         const json = await response.json();
         const { data } = json
-        console.log(data)
         const { postsArray, pageInfo } = data.postsConnection
-        console.log({postsArray})
         
         // When response comes back, update posts, cursor, and hasNext
         // and add the posts to the existing posts
         setPosts([...posts, ...postsArray])
-
-        
-        setPosts(postsArray)
         setCursor(pageInfo.endCursor)
         setHasNext(pageInfo.hasNextPage)
     }
-    console.log({posts})
     return (
         <>
         {posts.map((post) => (
