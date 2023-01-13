@@ -1,0 +1,13 @@
+---
+import Reply from "./Reply"
+import PostContent from "./PostContent"
+const { post } = Astro.props
+
+---
+
+
+<div class="prose bg-white  max-w-4xl mb-4 p-4 rounded-md">
+    <PostContent post={post} />
+    <Reply client:idle  />
+</div>
+
